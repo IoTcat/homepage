@@ -5,51 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <title>Hao's Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hao-homepage@1.0.0/styles.css">
+    <script type="text/javascript">var block_aplayer = true;</script>
+    <script src="https://cdn.yimian.xyz/ushio-js/ushio-head.min.js"></script>
+        <style media="screen">
+        body {
+            overflow: hidden;
+        }
+
+        .heart-body {
+            width: 500px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .snowfall-flakes:before,
+        .snowfall-flakes:after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: block;
+            width: 10px;
+            height: 16px;
+            background: red;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .snowfall-flakes:before {
+            -webkit-transform: rotate(-45deg);
+            /* Safari 和 Chrome */
+            -moz-transform: rotate(-45deg);
+            /* Firefox */
+            -ms-transform: rotate(-45deg);
+            /* IE 9 */
+            -o-transform: rotate(-45deg);
+            /* Opera */
+            transform: rotate(-45deg);
+        }
+
+        .snowfall-flakes:after {
+            left: 4px;
+            -webkit-transform: rotate(45deg);
+            /* Safari 和 Chrome */
+            -moz-transform: rotate(45deg);
+            /* Firefox */
+            -ms-transform: rotate(45deg);
+            /* IE 9 */
+            -o-transform: rotate(45deg);
+            /* Opera */
+            transform: rotate(45deg);
+        }
+    </style>
 </head>
-<body>
-    <div id="search">
-        <input id="search-field" type="text" name="search-field" onkeypress="return search(event)"/>
-    </div>
+<body id="bg" style="">
+	<script type="text/javascript">var t = new Date();document.getElementById("bg").style = `background-color:${'#'+('00000'+ (Math.random()*0x1000000<<0).toString(16)).substr(-6)};background-size:cover;background-image: url('https://cdn.jsdelivr.net/npm/hao-homepage@1.0.0/img/2020-02-11.jpg')`</script>
+    
     <div class="container">
         <div id="clock"></div>
         <div class="weather-container">
-            <div class="row">
-                <div id="weather-description"class="inline"></div>
-                <div class="inline">-</div>
-                <div id="temp" class="inline"></div>
+            <div class="row" id="doSearch" contenteditable="true" >
+            	<div id="msgbox"class="inline">Hi Hao~</div>
             </div>
         </div>
         <div class="bookmark-container">
             <div class="bookmark-set">
                 <div class="bookmark-title">Daily</div>
                 <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://inbox.google.com/" target="_blank">Inbox</a>
+                    <a class="bookmark" href="https://google.com/" target="_blank">Google</a>
+                    <a class="bookmark" href="https://baidu.com/" target="_blank">Baidu</a>
                     <a class="bookmark" href="https://github.com/" target="_blank">Github</a>
-                    <a class="bookmark" href="https://drive.google.com/" target="_blank">Drive</a>
                 </div>
             </div>
             <div class="bookmark-set">
                 <div class="bookmark-title">Media</div>
                 <div class="bookmark-inner-container">
                     <a class="bookmark" href="https://youtube.com" target="_blank">Youtube</a>
-                    <a class="bookmark" href="https://netflix.com" target="_blank">Netflix</a>
-                    <a class="bookmark" href="https://crunchyroll.com" target="_blank">Crunchyroll</a>
-                    <a class="bookmark" href="https://" target="_blank">Amazon Prime</a>
+                    <a class="bookmark" href="https://bilibili.com" target="_blank">Bilibili</a>
+                    <a class="bookmark" href="https://acg.watch" target="_blank">ACG.WATCH</a>
                 </div>
             </div>
             <div class="bookmark-set">
-            <div class="bookmark-title">Reddit</div>
+            <div class="bookmark-title">Study</div>
                 <div class="bookmark-inner-container">
-                    <a class="bookmark" href="https://reddit.com/r/overwatch" target="_blank">/r/overwatch</a>
-                    <a class="bookmark" href="https://reddit.com/r/pcmasterrace" target="_blank">/r/pcmasterrace</a>
-                    <a class="bookmark" href="https://reddit.com/r/me_irl" target="_blank">/r/me_irl</a>
-                    <a class="bookmark" href="https://reddit.com/r/battlestations" target="_blank">/r/battlestations</a>
-                    <a class="bookmark" href="https://reddit.com/r/unixporn" target="_blank">/r/unixporn</a>
-                    
-                    <a class="bookmark" href="https://reddit.com/r/news" target="_blank">/r/news</a>
+                    <a class="bookmark" href="https://vital.liv.ac.uk/" target="_blank">Vital</a>
+                    <a class="bookmark" href="http://plm.liv.ac.uk/" target="_blank">Liv Life</a>
+                    <a class="bookmark" href="https://ebridge.xjtlu.edu.cn/" target="_blank">Ebridge</a>
+                    <a class="bookmark" href="https://ice.xjtlu.edu.cn/" target="_blank">ICE</a>
                 </div>
             </div>
             <div class="bookmark-set">
@@ -57,11 +100,13 @@
                 <div class="bookmark-inner-container">
                     <a class="bookmark" href="https://twitter.com" target="_blank">Twitter</a>
                     <a class="bookmark" href="https://facebook.com" target="_blank">Facebook</a>
+                    <a class="bookmark" href="https://www.eee.dog" target="_blank">IoTcat's Blog</a>
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="https://cdn.yimian.xyz/ushio-js/ushio-footer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/loktar00/JQuery-Snowfall@1.7.4/dist/snowfall.jquery.min.js"></script>
     <script>
         // Search on enter key event
         function search(e) {
@@ -83,17 +128,119 @@
                 (sec < 10 ? ("0" + sec) : sec);
         }
 
+        function DateDifference(Date1,Date2) { //Date1和Date2是2017-07-10格式  
+		    var sDate, newDate1, newDate2, Days
+		    aDate = Date1.split("-");
+		    newDate1 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0]); //转换为07-10-2017格式  
+		    aDate = Date2.split("-");
+		    newDate2 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0]);
+		    Days = parseInt(Math.abs(newDate1 - newDate2) / 1000 / 60 / 60 / 24); //把差的毫秒数转换为天数  
+		    return Days;
+		}
+
+        //msg Box
+        var msgbox = {
+	        set: (s) => new Promise(resolve => {
+	        	var old = $('#msgbox').html();
+	        	var interval = 100;
+
+	        	for(var i = 0; i < old.length; i ++){
+	        		setTimeout((i)=>{
+	        			$('#msgbox').html(old.substring(0, old.length-i-1));
+	        		}, i*interval, i);
+	        	}
+
+	        	setTimeout(()=>{
+	        		for(var i = 0; i < s.length; i ++){
+		        		setTimeout((i)=>{
+		        			$('#msgbox').html(s.substring(0, i+1));
+		        			if(i == s.length-1){
+		        				resolve();
+		        			}
+		        		}, i*interval, i);
+		        	}
+	        	}, old.length*interval);
+	        }),
+	        arr: [],
+	        push: function(s){
+	        	msgbox.arr.push(s);
+	        },
+	        hide: function(){
+	        	$('#msgbox').hide();
+	        },
+	        show: function(){
+	        	$('#msgbox').show();
+	        },
+	        wait: (t) => new Promise(resolve => {
+	        	setTimeout(()=>{
+	        		resolve();
+	        	}, t);
+	        })
+    	};
+    	(async () => {
+    		var i = 0;
+    		await msgbox.wait(4000);
+    		while(1){
+    			await msgbox.set(msgbox.arr[i]);
+    			if(i < msgbox.arr.length-1){
+    				i++;
+    			}else{
+    				i = 0;
+    			}
+    			await msgbox.wait(3000);
+    		}
+    	})();
+
+    	
+    	var getSearch = function(){
+    		return $('#doSearch').html().match(/(.*)<div\sid/)[1];
+    	}
+
+        $('#doSearch').click(function(){
+        	msgbox.hide();
+        });
+
+    	$('#doSearch').keyup((event)=>{
+    		if(event.keyCode == 13){
+    			window.open('https://google.com/search?q='+encodeURI(getSearch()));
+    			window.location.reload();
+    		}
+    	});
+
+
+        // 情人节
+        if((new Date()).getMonth() == 1 && (new Date()).getDate() == 14){
+			msgbox.push('I Love You ❤❤');
+	    	msgbox.push("Happy Valentine's Day");
+	    	msgbox.push(`We have spend ${DateDifference('2019-10-19', `${t.getFullYear()}-${t.getMonth()+1}-${t.getDate()}`)} days Together~`);
+	    	msgbox.push('Thanks for being with me o(´^｀)o');
+
+			setTimeout(()=>{
+				$(document).snowfall({
+			          flakeCount: 70,
+			          round: true,
+			          maxSpeed : 8,
+			          maxSize : 5
+			      });
+			}, 13000);
+        }
+        else{
+        	msgbox.push(`We have spend ${DateDifference('2019-10-19', `${t.getFullYear()}-${t.getMonth()+1}-${t.getDate()}`)} days Together~`);
+        }
+
+
         window.onload = () => {
             let xhr = new XMLHttpRequest();
             // Request to open weather map
-            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=4737316&units=imperial&appid=e5b292ae2f9dae5f29e11499c2d82ece');
+            xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=Liverpool&appid=e5b292ae2f9dae5f29e11499c2d82ece');
             xhr.onload = () => {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                         let json = JSON.parse(xhr.responseText);
                         console.log(json);
-                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " F";
-                        document.getElementById("weather-description").innerHTML = json.weather[0].description;
+                        setTimeout(()=>{
+                        	msgbox.push(`${json.weather[0].main} - ${(json.main.temp - 273.15).toFixed(1)} °C`);
+                        }, 4000);
                     } else {
                         console.log('error msg: ' + xhr.status);
                     }
@@ -119,5 +266,6 @@
             }
         });
     </script>
+    <!--<script src='https://cdn.jsdelivr.net/npm/hao-homepage@1.0.0/pio.js'></script>-->
 </body>
 </html>

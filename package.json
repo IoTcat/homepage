@@ -1,0 +1,9 @@
+{
+  "name": "hao-homepage",
+  "version": "1.0.0",
+  "description": "homepage for hao",
+  "main": "index.js",
+  "repository": "https://github.com/iotcat/homepage",
+  "author": "iotcat <i@iotcat.me>",
+  "license": "Apache-2.0"
+}
